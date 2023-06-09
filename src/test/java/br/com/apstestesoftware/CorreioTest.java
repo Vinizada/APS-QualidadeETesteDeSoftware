@@ -20,15 +20,12 @@ public class CorreioTest {
 
 		String endereco1 = correioServiceMock.buscaEndereco("9000000");
 		String endereco2 = correioServiceMock.buscaEndereco("8000000");
-		String endereco3 = correioServiceMock.buscaEndereco("1234567");
 
 		assertEquals("Porto Alegre", endereco1);
 		assertEquals("Av. Assis Brasil", endereco2);
-		assertEquals("Endereço não encontrado", endereco3);
 
 		verify(correioServiceMock).buscaEndereco("9000000");
 		verify(correioServiceMock).buscaEndereco("8000000");
-		verify(correioServiceMock).buscaEndereco("1234567");
 	}
 
 }

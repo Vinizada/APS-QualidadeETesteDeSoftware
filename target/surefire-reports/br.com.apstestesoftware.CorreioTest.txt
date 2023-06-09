@@ -1,30 +1,24 @@
 -------------------------------------------------------------------------------
 Test set: br.com.apstestesoftware.CorreioTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.443 s <<< FAILURE! - in br.com.apstestesoftware.CorreioTest
-br.com.apstestesoftware.CorreioTest.testBuscaEndereco  Time elapsed: 0.406 s  <<< ERROR!
-org.mockito.exceptions.base.MockitoException: 
-
-Mockito cannot mock this class: class br.com.apstestesoftware.entities.CorreioService.
-
-Mockito can only mock non-private & non-final classes.
-If you're not sure why you're getting this error, please report to the mailing list.
-
-
-Java               : 17
-JVM vendor name    : Eclipse Adoptium
-JVM vendor version : 17.0.6+10
-JVM name           : OpenJDK 64-Bit Server VM
-JVM version        : 17.0.6+10
-JVM info           : mixed mode
-OS name            : Windows 11
-OS version         : 10.0
-
-
-Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.11 s <<< FAILURE! - in br.com.apstestesoftware.CorreioTest
+br.com.apstestesoftware.CorreioTest.testBuscaEndereco  Time elapsed: 0.067 s  <<< ERROR!
+java.lang.IllegalStateException: Could not initialize plugin: interface org.mockito.plugins.MockMaker (alternate: null)
 	at br.com.apstestesoftware.CorreioTest.testBuscaEndereco(CorreioTest.java:16)
-Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalStateException: Internal problem occurred, please report it. Mockito is unable to load the default implementation of class that is a part of Mockito distribution. Failed to load interface org.mockito.plugins.MockMaker
 	at br.com.apstestesoftware.CorreioTest.testBuscaEndereco(CorreioTest.java:16)
-Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.lang.Class[])'
+Caused by: java.lang.reflect.InvocationTargetException
+	at br.com.apstestesoftware.CorreioTest.testBuscaEndereco(CorreioTest.java:16)
+Caused by: org.mockito.exceptions.base.MockitoInitializationException: 
+
+It seems like you are running Mockito with an incomplete or inconsistent class path. Byte Buddy could not be loaded.
+
+Byte Buddy is available on Maven Central as 'net.bytebuddy:byte-buddy' with the module name 'net.bytebuddy'.
+For the inline mock maker, 'net.bytebuddy:byte-buddy-agent' with the module name 'net.bytebuddy.agent' is also required.
+Normally, your IDE or build tool (such as Maven or Gradle) should take care of your class path completion but 
+	at br.com.apstestesoftware.CorreioTest.testBuscaEndereco(CorreioTest.java:16)
+Caused by: java.lang.NoClassDefFoundError: net/bytebuddy/utility/GraalImageCode
+	at br.com.apstestesoftware.CorreioTest.testBuscaEndereco(CorreioTest.java:16)
+Caused by: java.lang.ClassNotFoundException: net.bytebuddy.utility.GraalImageCode
 	at br.com.apstestesoftware.CorreioTest.testBuscaEndereco(CorreioTest.java:16)
 
