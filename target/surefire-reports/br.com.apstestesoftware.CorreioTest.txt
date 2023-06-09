@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------
+Test set: br.com.apstestesoftware.CorreioTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.443 s <<< FAILURE! - in br.com.apstestesoftware.CorreioTest
+br.com.apstestesoftware.CorreioTest.testBuscaEndereco  Time elapsed: 0.406 s  <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class br.com.apstestesoftware.entities.CorreioService.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 17
+JVM vendor name    : Eclipse Adoptium
+JVM vendor version : 17.0.6+10
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 17.0.6+10
+JVM info           : mixed mode
+OS name            : Windows 11
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+	at br.com.apstestesoftware.CorreioTest.testBuscaEndereco(CorreioTest.java:16)
+Caused by: java.lang.IllegalArgumentException: Could not create type
+	at br.com.apstestesoftware.CorreioTest.testBuscaEndereco(CorreioTest.java:16)
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.lang.Class[])'
+	at br.com.apstestesoftware.CorreioTest.testBuscaEndereco(CorreioTest.java:16)
+
